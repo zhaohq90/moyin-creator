@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev 2>&1 | head -80)",
+      "Bash(npx electron-vite build --outDir /tmp/moyin-check 2>&1 | head -100)",
+      "Bash(ls node_modules/electron-vite/dist/ && grep -r 'DEV_SERVER' node_modules/electron-vite/ --include='*.js' -l 2>/dev/null | head -5)",
+      "Bash(grep -o 'VITE_DEV_SERVER_URL\\\\|devServerUrl\\\\|DEV_SERVER' node_modules/electron-vite/dist/chunks/*.js | head -20)"
+    ]
+  }
+}
